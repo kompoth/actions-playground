@@ -1,0 +1,9 @@
+on: release
+
+jobs:
+  do_smth:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo 'Release'
+    - if: github.event_name == 'release' && github.event.action == 'published'
+      run: echo 'Published release'
